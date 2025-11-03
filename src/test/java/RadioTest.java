@@ -12,11 +12,29 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
+    public void shouldSetVolumeUpBorder() {
+        Radio radio = new Radio();
+        radio.currentVolume = 100;
+        radio.increaseVolume();
+        int expected = 100;
+        int actual = radio.currentVolume;
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
     public void shouldSetVolumeDown() {
         Radio radio = new Radio();
         radio.currentVolume = 34;
         radio.decreaseVolume();
         int expected = 33;
+        int actual = radio.currentVolume;
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldSetVolumeDownBorder() {
+        Radio radio = new Radio();
+        radio.currentVolume = 0;
+        radio.decreaseVolume();
+        int expected = 0;
         int actual = radio.currentVolume;
         Assertions.assertEquals(expected, actual);
     }
