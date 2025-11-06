@@ -98,4 +98,13 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void shouldConstructStatinNext() {
+        Radio radio = new Radio(15);
+        radio.currentStation = 14;
+        radio.nextCurrentStation();
+        int expected = 0;
+        int actual = radio.currentStation;
+        Assertions.assertEquals(expected, actual);
+    }
 }
